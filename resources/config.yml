@@ -1,0 +1,9 @@
+tutorial:
+  # Messages in tutorial
+  messages:
+    - "This is a tutorial!"
+    - "Do /tutorial to use"
+    - "You can edit the tutorial\nin the config.yml"
+    - "Add as many messages as you wish"
+  # Delay between each message in seconds
+  delay: 2

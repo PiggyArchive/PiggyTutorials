@@ -1,0 +1,18 @@
+name: PiggyTutorials
+main: PiggyTutorials\Main
+version: 1.0.0
+api: [3.0.0-ALPHA9, 3.0.0-ALPHA10]
+load: POSTWORLD
+author: DaPigGuy
+permissions:
+  piggytutorials:
+    default: op
+    description: "Use everything in PiggyTutorials"
+    childrem:
+      piggytutorials.command:
+        default: op
+        description: "Use all PiggyTutorials commands"
+        children:
+          piggytutorials.command.tutorial:
+            default: true
+            description: "Use /description"
