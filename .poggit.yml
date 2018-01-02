@@ -1,0 +1,7 @@
+--- # Poggit-CI Manifest. Open the CI at https://poggit.pmmp.io/ci/DaPigGuy/PiggyTutorials
+branches:
+- master
+projects:
+  PiggyTutorials:
+    path: ""
+...
