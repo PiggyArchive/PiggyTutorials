@@ -40,7 +40,6 @@ class TutorialTask extends PluginTask
                 $lines[$k] = str_pad($line, max(array_map("strlen", $lines)), " ", STR_PAD_BOTH);
             }
             $message = implode("\n", $lines);
-            var_dump($lines);
             $this->player->addTitle("", $message);
             $this->part++;
             return true;
