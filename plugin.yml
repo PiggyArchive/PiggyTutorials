@@ -8,7 +8,7 @@ permissions:
   piggytutorials:
     default: op
     description: "Use everything in PiggyTutorials"
-    childrem:
+    children:
       piggytutorials.command:
         default: op
         description: "Use all PiggyTutorials commands"
