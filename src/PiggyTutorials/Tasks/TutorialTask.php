@@ -4,12 +4,12 @@ namespace PiggyTutorials\Tasks;
 
 use PiggyTutorials\Main;
 use pocketmine\Player;
-use pocketmine\scheduler\PluginTask;
+use pocketmine\scheduler\Task;
 
 /**
  * Class TutorialTask
  */
-class TutorialTask extends PluginTask
+class TutorialTask extends Task
 {
     private $plugin;
     private $player;
@@ -25,18 +25,18 @@ class TutorialTask extends PluginTask
     {
         $this->plugin = $plugin;
         $this->player = $player;
-        parent::__construct($plugin);
     }
 
     /**
      * @param int $currentTick
+     * @return bool
      */
     public function onRun(int $currentTick)
     {
         if ($this->part <= $this->plugin->getTotalTutorialMessages()) {
             $message = $this->plugin->getTutorialMessage($this->part - 1);
             $lines = explode("\n", $message);
-            foreach ($lines as $k => $line){
+            foreach ($lines as $k => $line) {
                 $lines[$k] = str_pad($line, max(array_map("strlen", $lines)), " ", STR_PAD_BOTH);
             }
             $message = implode("\n", $lines);
@@ -45,7 +45,7 @@ class TutorialTask extends PluginTask
             return true;
         }
         $this->plugin->removeFromTutorialMode($this->player);
-        $this->plugin->getServer()->getScheduler()->cancelTask($this->getHandler()->getTaskId());
+        $this->plugin->getScheduler()->cancelTask($this->getHandler()->getTaskId());
         return false;
     }
 }

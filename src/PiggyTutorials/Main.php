@@ -33,7 +33,7 @@ class Main extends PluginBase
     public function startTutorial(Player $player)
     {
         $task = new TutorialTask($this, $player);
-        $handler = $this->getServer()->getScheduler()->scheduleRepeatingTask($task, $this->tutorialDelay * 20);
+        $handler = $this->getScheduler()->scheduleRepeatingTask($task, $this->tutorialDelay * 20);
         $task->setHandler($handler);
         $this->addToTutorialMode($player);
     }
