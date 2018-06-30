@@ -14,8 +14,11 @@ use pocketmine\utils\TextFormat;
  */
 class Main extends PluginBase
 {
+    /** @var array */
     private $tutorialMode;
+    /** @var array */
     private $tutorialMessages;
+    /** @var int */
     private $tutorialDelay;
 
     public function onEnable()
@@ -30,6 +33,9 @@ class Main extends PluginBase
         $this->getLogger()->info(TextFormat::GREEN . "Enabled.");
     }
 
+    /**
+     * @param Player $player
+     */
     public function startTutorial(Player $player)
     {
         $task = new TutorialTask($this, $player);
@@ -81,6 +87,10 @@ class Main extends PluginBase
         return $this->tutorialMessages;
     }
 
+    /**
+     * @param int $part
+     * @return string|null
+     */
     public function getTutorialMessage(int $part)
     {
         return isset($this->tutorialMessages[$part]) ? $this->tutorialMessages[$part] : null;
@@ -102,6 +112,10 @@ class Main extends PluginBase
         $this->tutorialMessages = $messages;
     }
 
+    /**
+     * @param string $message
+     * @param int $part
+     */
     public function setTutorialMessage(string $message, int $part)
     {
         $this->tutorialMessages[$part] = $message;

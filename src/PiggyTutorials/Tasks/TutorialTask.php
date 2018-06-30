@@ -11,8 +11,11 @@ use pocketmine\scheduler\Task;
  */
 class TutorialTask extends Task
 {
+    /** @var Main */
     private $plugin;
+    /** @var Player */
     private $player;
+    /** @var int */
     private $part = 1;
 
 

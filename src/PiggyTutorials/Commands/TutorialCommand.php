@@ -8,8 +8,17 @@ use pocketmine\command\PluginCommand;
 use pocketmine\Player;
 use pocketmine\utils\TextFormat;
 
+/**
+ * Class TutorialCommand
+ * @package PiggyTutorials\Commands
+ */
 class TutorialCommand extends PluginCommand
 {
+    /**
+     * TutorialCommand constructor.
+     * @param string $name
+     * @param Main $plugin
+     */
     public function __construct(string $name, Main $plugin)
     {
         parent::__construct($name, $plugin);
@@ -18,6 +27,12 @@ class TutorialCommand extends PluginCommand
         $this->setPermission("piggytutorials.command.tutorial");
     }
 
+    /**
+     * @param CommandSender $sender
+     * @param string $commandLabel
+     * @param array $args
+     * @return bool
+     */
     public function execute(CommandSender $sender, string $commandLabel, array $args)
     {
         if (!$this->testPermission($sender)) {
