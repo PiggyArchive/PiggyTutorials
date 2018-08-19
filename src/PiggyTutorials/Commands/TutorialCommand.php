@@ -31,26 +31,21 @@ class TutorialCommand extends PluginCommand
      * @param CommandSender $sender
      * @param string $commandLabel
      * @param array $args
-     * @return bool
      */
     public function execute(CommandSender $sender, string $commandLabel, array $args)
     {
-        if (!$this->testPermission($sender)) {
-            return false;
-        }
+        if (!$this->testPermission($sender)) return;
         $plugin = $this->getPlugin();
         if ($plugin instanceof Main) {
             if ($sender instanceof Player) {
                 if (!$plugin->isInTutorialMode($sender)) {
                     $plugin->startTutorial($sender);
-                    return true;
+                    return;
                 }
                 $sender->sendMessage(TextFormat::RED . "You are already in the tutorial.");
-                return false;
+                return;
             }
             $sender->sendMessage(TextFormat::RED . "Use this in-game.");
-            return false;
         }
-        return false;
     }
 }

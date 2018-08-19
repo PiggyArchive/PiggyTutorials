@@ -32,7 +32,6 @@ class TutorialTask extends Task
 
     /**
      * @param int $currentTick
-     * @return bool
      */
     public function onRun(int $currentTick)
     {
@@ -45,10 +44,9 @@ class TutorialTask extends Task
             $message = implode("\n", $lines);
             $this->player->addTitle("", $message);
             $this->part++;
-            return true;
+            return;
         }
         $this->plugin->removeFromTutorialMode($this->player);
         $this->plugin->getScheduler()->cancelTask($this->getHandler()->getTaskId());
-        return false;
     }
 }
