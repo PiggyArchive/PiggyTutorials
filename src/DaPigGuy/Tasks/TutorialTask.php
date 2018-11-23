@@ -8,6 +8,7 @@ use pocketmine\scheduler\Task;
 
 /**
  * Class TutorialTask
+ * @package DaPigGuy\PiggyTutorials\Tasks
  */
 class TutorialTask extends Task
 {
