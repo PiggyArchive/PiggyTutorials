@@ -1,8 +1,8 @@
 <?php
 
-namespace PiggyTutorials\Tasks;
+namespace DaPigGuy\PiggyTutorials\Tasks;
 
-use PiggyTutorials\Main;
+use DaPigGuy\PiggyTutorials\Main;
 use pocketmine\Player;
 use pocketmine\scheduler\Task;
 
@@ -18,10 +18,9 @@ class TutorialTask extends Task
     /** @var int */
     private $part = 1;
 
-
     /**
      * TutorialTask constructor.
-     * @param Main $plugin
+     * @param Main   $plugin
      * @param Player $player
      */
     public function __construct(Main $plugin, Player $player)

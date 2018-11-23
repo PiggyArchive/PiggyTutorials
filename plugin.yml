@@ -1,6 +1,6 @@
 name: PiggyTutorials
-main: PiggyTutorials\Main
-version: 1.0.2
+main: DaPigGuy\PiggyTutorials\Main
+version: 1.1.0
 api: 3.0.0
 load: POSTWORLD
 author: DaPigGuy

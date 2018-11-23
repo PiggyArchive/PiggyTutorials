@@ -1,16 +1,15 @@
 <?php
 
-namespace PiggyTutorials;
+namespace DaPigGuy\PiggyTutorials;
 
-use PiggyTutorials\Commands\TutorialCommand;
-use PiggyTutorials\Tasks\TutorialTask;
+use DaPigGuy\PiggyTutorials\Commands\TutorialCommand;
+use DaPigGuy\PiggyTutorials\Tasks\TutorialTask;
 use pocketmine\Player;
 use pocketmine\plugin\PluginBase;
-use pocketmine\utils\TextFormat;
 
 /**
  * Class Main
- * @package PiggyTutorials
+ * @package DaPigGuy\PiggyTutorials
  */
 class Main extends PluginBase
 {
@@ -24,13 +23,9 @@ class Main extends PluginBase
     public function onEnable()
     {
         $this->saveDefaultConfig();
-
         $this->tutorialMessages = $this->getConfig()->getNested("tutorial.messages");
         $this->tutorialDelay = $this->getConfig()->getNested("tutorial.delay");
-
-        $this->getServer()->getCommandMap()->register("tutorial", new TutorialCommand("tutorial", $this));
-
-        $this->getLogger()->info(TextFormat::GREEN . "Enabled.");
+        $this->getServer()->getCommandMap()->register("piggytutorials", new TutorialCommand("tutorial", $this));
     }
 
     /**
@@ -114,7 +109,7 @@ class Main extends PluginBase
 
     /**
      * @param string $message
-     * @param int $part
+     * @param int    $part
      */
     public function setTutorialMessage(string $message, int $part)
     {

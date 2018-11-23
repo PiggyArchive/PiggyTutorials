@@ -1,8 +1,8 @@
 <?php
 
-namespace PiggyTutorials\Commands;
+namespace DaPigGuy\PiggyTutorials\Commands;
 
-use PiggyTutorials\Main;
+use DaPigGuy\PiggyTutorials\Main;
 use pocketmine\command\CommandSender;
 use pocketmine\command\PluginCommand;
 use pocketmine\Player;
@@ -10,14 +10,14 @@ use pocketmine\utils\TextFormat;
 
 /**
  * Class TutorialCommand
- * @package PiggyTutorials\Commands
+ * @package DaPigGuy\PiggyTutorials\Commands
  */
 class TutorialCommand extends PluginCommand
 {
     /**
      * TutorialCommand constructor.
      * @param string $name
-     * @param Main $plugin
+     * @param Main   $plugin
      */
     public function __construct(string $name, Main $plugin)
     {
@@ -29,8 +29,8 @@ class TutorialCommand extends PluginCommand
 
     /**
      * @param CommandSender $sender
-     * @param string $commandLabel
-     * @param array $args
+     * @param string        $commandLabel
+     * @param array         $args
      */
     public function execute(CommandSender $sender, string $commandLabel, array $args)
     {
