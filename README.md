@@ -4,5 +4,5 @@ PiggyTutorials is a simple plugin to create a tutorial for your server.
 
 ## Information
 * We do not support any spoons. Anything to do with spoons (Issues or PRs) will be ignored.
-* Check out our installation guide at [PiggyDocs.](https://dapigguy.github.io/PiggyTutorials/)
+* Check out our installation guide at [PiggyDocs.](https://piggydocs.aericio.net/archive/PiggyCrates.html)
 * Check out our [Discord Server](https://discord.gg/ZZewRQH) for additional plugin support.
